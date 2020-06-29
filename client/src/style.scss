@@ -1,0 +1,74 @@
+$width: 100;
+$pinkColor: #FF0084;
+$cyanColor: #4A8BE1;
+
+body{
+    background-color: #F3F5F6;
+}
+.nav-title{
+  color: white !important;
+}
+hr{
+  border: 1px solid #ccc;
+  margin: 0;
+  margin-bottom: 3em;
+}
+.greeting{
+  background-color: white;
+  color: #020202;
+  font-family: monospace !important;
+  padding: 2em;
+}
+.search-container{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0 3em 0px;
+}
+.search-input{
+  width: 50%;
+}
+
+.ball-loader-container{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.ball-loader{
+  width: $width + 0px;
+  height: ($width / 3) - 10px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.ball-loader-ball{
+  will-change: transform;
+  height:($width / 3) - 10px;
+  width: ($width / 3) - 10px;
+  border-radius: 50%;
+  background-color: $cyanColor;
+  position: absolute;
+  animation: grow 1s ease-in-out infinite alternate;
+  
+  
+  &.ball1{
+    left:0;
+    transform-origin: 100% 50%;
+  }
+  &.ball2{
+    left:50%;
+    transform: translateX(-50%) scale(1);
+    animation-delay: 0.33s;
+    background-color: $pinkColor;
+  }
+  &.ball3{
+    right:0;
+    animation-delay: 0.66s;
+  }
+}
+
+@keyframes grow{
+  to{
+    transform: translateX(-50%) scale(0);
+  }
+}
