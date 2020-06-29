@@ -3,6 +3,8 @@
 Search photos with flickr API.
 This app using Node.js + VueJS + ReactJS platforms, and Vue is the main app with combined React Component.
 
+The server using cache-memory for saving photos, the key is the url of the photo from Flickr API.
+
 # How to run 
 ```
 docker-compose -f docker-compose-<target>.yml  <Commands>
